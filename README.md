@@ -46,6 +46,10 @@ cp config.template.yaml config.yaml
 python managed_agent_main.py run --track A --contract path/to/contract.txt --assumptions path/to/assumptions.json --config config.yaml
 ```
 
+### License
+
+Licensed under Apache License 2.0. See `LICENSE`.
+
 ## 中文
 
 这是 Crucible 的**最小开源包**，仅包含框架核心与 mock 模式运行能力。
@@ -90,6 +94,10 @@ export GOOGLE_API_KEY="..."
 cp config.template.yaml config.yaml
 python managed_agent_main.py run --track A --contract path/to/contract.txt --assumptions path/to/assumptions.json --config config.yaml
 ```
+
+### 许可证
+
+本项目采用 Apache License 2.0，详见 `LICENSE`。
 
 ## 日本語
 
@@ -136,3 +144,7 @@ export GOOGLE_API_KEY="..."
 cp config.template.yaml config.yaml
 python managed_agent_main.py run --track A --contract path/to/contract.txt --assumptions path/to/assumptions.json --config config.yaml
 ```
+
+### ライセンス
+
+本プロジェクトは Apache License 2.0 で提供されます。詳細は `LICENSE` を参照してください。
