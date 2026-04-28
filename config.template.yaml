@@ -1,0 +1,139 @@
+deployment:
+  name: crucible-prod
+  created_at: "<FILL_IN>"
+  practitioner: "<FILL_IN>"
+  crucible_version: "3.0"
+
+jurisdiction:
+  primary: Japan
+  language: Japanese
+  citation_regex_patterns:
+    japan: '第\d+条(?:第\d+項)?(?:第\d+号)?'
+    us: '(?:§|\bSection\b|\bSec\.\b)\s*\d+[\w.-]*'
+    eu: '\bArticle\s+\d+\b'
+
+tracks:
+  review:
+    enabled: true
+  draft:
+    enabled: true
+
+models:
+  mpsr_anthropic:
+    provider: anthropic
+    tier: flagship
+    model_string: "<FILL_IN>"
+    max_output_tokens: 4096
+    structured_output: true
+  mpsr_openai:
+    provider: openai
+    tier: flagship
+    model_string: "<FILL_IN>"
+    max_output_tokens: 4096
+    structured_output: true
+  mpsr_google:
+    provider: google
+    tier: flagship
+    model_string: "<FILL_IN>"
+    max_output_tokens: 4096
+    structured_output: true
+  framework:
+    provider: anthropic
+    tier: flagship
+    model_string: "<FILL_IN>"
+    max_output_tokens: 8192
+    structured_output: true
+  verdict:
+    provider: google
+    tier: flagship
+    model_string: "<FILL_IN>"
+    max_output_tokens: 8192
+    structured_output: false
+  charter_delta_residual:
+    provider: anthropic
+    tier: fast
+    model_string: "<FILL_IN>"
+    max_output_tokens: 2048
+    structured_output: true
+  auditor:
+    provider: anthropic
+    tier: fast
+    model_string: "<FILL_IN>"
+    max_output_tokens: 1024
+    structured_output: true
+
+pricing_usd_per_mtok:
+  anthropic:
+    flagship:
+      input: "<FILL_IN>"
+      output: "<FILL_IN>"
+    fast:
+      input: "<FILL_IN>"
+      output: "<FILL_IN>"
+  openai:
+    flagship:
+      input: "<FILL_IN>"
+      output: "<FILL_IN>"
+  google:
+    flagship:
+      input: "<FILL_IN>"
+      output: "<FILL_IN>"
+
+rate_limits:
+  anthropic:
+    tokens_per_minute: 80000
+    requests_per_minute: 60
+  openai:
+    tokens_per_minute: 90000
+    requests_per_minute: 60
+  google:
+    tokens_per_minute: 100000
+    requests_per_minute: 60
+
+prompt_caching:
+  ttl_mode: "1h_with_fallback"
+  anthropic:
+    enabled: true
+    cache_control_type: ephemeral
+    ttl: "1h"
+  google:
+    enabled: true
+    ttl_seconds: 3600
+  openai:
+    enabled: false
+
+rag:
+  follow_references_default: true
+  max_recursion_depth: 1
+
+charter_delta_few_shot_examples:
+  japan:
+    use_default: true
+
+guardrails:
+  budget_cap_usd: 25.0
+  budget_cap_overdraft_allowance_usd: 5.0
+  wall_clock_cap_seconds: 7200
+  subagent_invocations_cap: 40
+  tool_calls_cap: 200
+
+telemetry:
+  log_path: ./runs/telemetry.jsonl
+  log_format: jsonl
+  fields:
+    - event
+    - timestamp
+    - run_id
+    - spend_usd
+    - elapsed_seconds
+    - subagent_invocations
+    - cache_rebuilds_count
+    - cache_rebuild_overdraft_total_usd
+    - ttl_mode_degraded
+    - rag_cache_hits
+    - rag_cache_misses
+
+smoke_test:
+  enabled: true
+  validate_structured_output: true
+  validate_ttl_mode: true
