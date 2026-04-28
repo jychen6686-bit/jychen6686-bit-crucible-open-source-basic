@@ -45,6 +45,7 @@ It includes core orchestration code and mock-mode execution only.
 - Yes, prompt templates are open in this repository.
 - This is acceptable for transparent OSS distribution, but prompts are also part of your product IP.
 - If you want tighter commercial control, keep only a minimal public prompt set and maintain an internal/private prompt pack.
+- In this repository, `subagent_prompts.md` is positioned as a **baseline public prompt pack**.
 
 ### Quick Start
 
@@ -119,6 +120,7 @@ Licensed under Apache License 2.0. See `LICENSE`.
 - 是的，当前仓库里已开源提示词模板。
 - 这样做有利于透明开源，但提示词本身也是产品 IP。
 - 如果你希望更强商业控制，建议只公开最小提示词集合，把增强版提示词放到内部私有仓。
+- 在本仓库中，`subagent_prompts.md` 被定位为**基础版（baseline）提示词包**。
 
 ### 快速开始
 
@@ -194,6 +196,7 @@ python managed_agent_main.py run --track A --contract path/to/contract.txt --ass
 - はい、現状はプロンプトテンプレートを公開しています。
 - OSS の透明性には有効ですが、プロンプト自体は製品 IP でもあります。
 - 商用コントロールを強めるなら、公開版は最小テンプレートのみとし、拡張版は社内非公開で運用するのが安全です。
+- 本リポジトリでは、`subagent_prompts.md` を**ベースライン公開プロンプトパック**として位置付けています。
 
 ### クイックスタート
 
