@@ -40,6 +40,13 @@ It includes core orchestration code and mock-mode execution only.
 - Runtime artifacts (`runs/`, caches)
 - Proprietary or copyrighted corpus data (`RAG READY/`, `rag_index/`)
 
+### Directory Naming (Examples)
+
+- Corpus directory: user-provided legal corpus (excluded from repo)
+- Vector index directory: locally generated index (excluded from repo)
+- Example names in this project: `RAG READY/`, `rag_index/`
+- Custom names are fully supported as long as paths are configured correctly.
+
 ### About `subagent_prompts.md`
 
 - Yes, prompt templates are open in this repository.
@@ -114,6 +121,13 @@ Licensed under Apache License 2.0. See `LICENSE`.
 - 本地/私密配置（`config.yaml`、`.env`）
 - 运行产物（`runs/`、缓存）
 - 私有或受版权保护的语料与索引（`RAG READY/`、`rag_index/`）
+
+### 目录命名（示例）
+
+- 语料目录：用户自备法律语料（不随仓库分发）
+- 向量索引目录：本地生成索引（不随仓库分发）
+- 本项目示例名：`RAG READY/`、`rag_index/`
+- 目录名可自定义，只需在配置里正确指向路径即可。
 
 ### 关于 `subagent_prompts.md`
 
@@ -190,6 +204,13 @@ python managed_agent_main.py run --track A --contract path/to/contract.txt --ass
 - ローカル/機密設定（`config.yaml`、`.env`）
 - 実行生成物（`runs/`、キャッシュ）
 - 著作権または私有データ（`RAG READY/`、`rag_index/`）
+
+### ディレクトリ命名（例）
+
+- コーパス用ディレクトリ: ユーザー提供の法務コーパス（リポジトリには含めない）
+- ベクトル索引用ディレクトリ: ローカル生成インデックス（リポジトリには含めない）
+- 本プロジェクトでの例: `RAG READY/`, `rag_index/`
+- ディレクトリ名は任意で、設定ファイルのパスが正しければ問題ありません。
 
 ### `subagent_prompts.md` について
 
